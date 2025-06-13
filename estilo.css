@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --corPrincipal: #77a6fd;
+    --corFundo: #f5f5f5;
+    --corTexto: #333;
+}
+
+/* Ajuste geral */
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--corFundo);
+    color: var(--corTexto);
+}
+
+/* Cabeçalho minimalista */
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #3b3a3a;
+    padding: 10px 15px;
+}
+
+header a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+header input {
+    width: 50px;
+    height: 35px;
+    font-size: 16px;
+    background-color: var(--corPrincipal);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Menu lateral responsivo */
+.menu-lateral {
+    width: 220px;
+    height: 100vh;
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    right: -230px;
+    top: 0;
+    transition: right 0.3s ease-in-out;
+}
+
+.menu-lateral.visivel {
+    right: 0;
+}
+
+.menu-lateral h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral ul li {
+    margin: 8px 0;
+}
+
+.menu-lateral ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Conteúdo principal */
+main {
+    padding: 15px;
+    max-width: 340px;
+    margin: auto;
+}
+
+main h2 {
+    font-size: 18px;
+    color: var(--corPrincipal);
+    margin-bottom: 10px;
+}
+
+/* Melhorando a lista na tela Home */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+main ul li {
+    background: white;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Ícone na frente dos itens */
+main ul li::before {
+    content: "✓";
+    font-size: 16px;
+    color: var(--corPrincipal);
+}
+
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+input {
+    border: solid 1px #807e7e;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    font-size: 14px;
+}
+
+input:hover {
+    border: solid 1px var(--corPrincipal);
+}
+
+.botoes-acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input[type="button"], input[type="submit"] {
+    cursor: pointer;
+    background-color: var(--corPrincipal);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
