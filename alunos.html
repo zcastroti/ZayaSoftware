@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zCastro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header>
+        <a href="inicio.html"></a>
+        <input id="botaoMenuLateral" type="button" value="☰">
+    </header>
+
+    <div class="menu-lateral" id="menuLateral">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="dadosEmpresa.html">Dados da Empresa</a></li>
+            <li><a href="alunos.html">Alunos</a></li>
+        </ul>
+    </div>
+
+    <main id="conteudoPrincipal">
+        <h2>Alunos</h2>
+
+        <form id="formAluno">
+            <label for="nomeAluno">Nome do aluno</label>
+            <input type="text" id="nomeAluno" required>
+            <label for="matriculaAluno">Matrícula</label>
+            <input type="text" id="matriculaAluno" required>
+            <label for="notaAluno">Nota</label>
+            <input type="text" id="notaAluno" required>
+            <button type="submit" class="estiloBotao">Adicionar</button>
+        </form>
+
+        <div id="tabelaRolagemHorizontal">
+            <table>
+                <thead>
+                <tr>
+                    <th>Ação</th>
+                    <th>Aluno</th>
+                    <th>Matrícula</th>
+                    <th>Nota</th>
+                    <th>Faltas</th>
+                    <th>Resultado</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="estiloBotao" style="margin: 0; width: 40px; font-size: 15px;" type="button" value="⚙"></td>
+                        <td>Guilherme Castro</td>
+                        <td>20250101</td>
+                        <td>9.0</td>
+                        <td>8</td>
+                        <td>Aprovado(a)</td>
+                    </tr>
+                    <tr>
+                        <td><input class="estiloBotao" style="margin: 0; width: 40px; font-size: 15px;" type="button" value="⚙"></td>
+                        <td>Nayara Gonzalez</td>
+                        <td>20250102</td>
+                        <td>10.0</td>
+                        <td>14</td>
+                        <td>Reprovado(a)</td>
+                    </tr>
+                    <tr>
+                        <td><input class="estiloBotao" style="margin: 0; width: 40px; font-size: 15px;" type="button" value="⚙"></td>
+                        <td>Júlia Cardoso</td>
+                        <td>20250103</td>
+                        <td>7.7</td>
+                        <td>5</td>
+                        <td>Aprovado(a)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="script.js">
+    </script> 
+</body>
+</html>

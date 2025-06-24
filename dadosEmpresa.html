@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zCastro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<style>
+    input#logotipoEmpresa { display: none; }
+
+    label#estiloBotaoEscolherLogotipoEmpresa {
+        background: white;
+        border: solid 1px #807e7e;
+        border-radius: 2px;
+        color: var(--corTexto);
+        cursor: pointer;                  
+        margin: 2px 0px 5px;
+        padding: 5px 0px; }
+
+    div#campoPreviaLogotipoEmpresa {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        border: solid 1px #807e7e; 
+        background: white;
+        margin-top: 5px;
+        border-radius: 2px; 
+        padding: 5px; }
+
+    p#legendaPreviaLogotipoEmpresa {
+        display: block; 
+        font-size: 13px; }
+
+    img#previaLogotipoEmpresa {
+        max-width: 120px; 
+        max-height: 120px; 
+        display: none; }
+</style>
+
+<body>
+    <header>
+        <a href="inicio.html"></a>
+        <input id="botaoMenuLateral" type="button" value="☰">
+    </header>
+
+    <div class="menu-lateral" id="menuLateral">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="dadosEmpresa.html">Dados da Empresa</a></li>
+            <li><a href="alunos.html">Alunos</a></li>
+        </ul>
+    </div>
+  
+    <!-- Conteúdo -->
+    <main id="conteudoPrincipal">
+        <h2>Dados da Empresa</h2>
+
+        <form id="formDadosEmpresa">
+            <label for="nomeEmpresa">Nome</label>
+            <input type="text" name="nomeEmpresa" id="nomeEmpresa">
+
+            <label for="cnpjEmpresa">CNPJ</label>
+            <input type="text" name="cnpjEmpresa" id="cnpjEmpresa">
+
+            <label for="telefoneEmpresa">Telefone</label>
+            <input type="text" name="telefoneEmpresa" id="telefoneEmpresa">
+
+            <label for="emailEmpresa">E-mail</label>
+            <input type="text" name="emailEmpresa" id="emailEmpresa">
+
+            <label for="enderecoEmpresa">Endereço</label>
+            <input type="text" name="enderecoEmpresa" id="enderecoEmpresa">
+
+            <label for="logotipoEmpresa">Logotipo <b>Máximo 120 x 120 pixels</b></label>
+            <label for="logotipoEmpresa" id="estiloBotaoEscolherLogotipoEmpresa">📁 Escolha um arquivo</label>
+            <input type="file" id="logotipoEmpresa" name="logotipoEmpresa" accept="image/*" onchange="exibirLogotipoEmpresa(event)">
+
+            <div id="campoPreviaLogotipoEmpresa">
+                <p id="legendaPreviaLogotipoEmpresa">Nenhuma Imagem</p>
+                <img id="previaLogotipoEmpresa">
+            </div>
+
+            <input type="button" value="Gravar" id="botaoGrava" class="estiloBotao">
+        </form>
+
+    </main>
+
+    <script>
+        document.getElementById('botaoGrava').addEventListener('click', function () {
+        const dadosEmpresa = {
+            nome: document.getElementById('nomeEmpresa').value,
+            cnpj: document.getElementById('cnpjEmpresa').value,
+            telefone: document.getElementById('telefoneEmpresa').value,
+            email: document.getElementById('emailEmpresa').value,
+            endereco: document.getElementById('enderecoEmpresa').value
+        };
+
+        localStorage.setItem('dadosEmpresa', JSON.stringify(dadosEmpresa));
+        alert('Dados salvos com sucesso!');
+        });
+
+        window.addEventListener('load', function () {
+        const dadosSalvos = JSON.parse(localStorage.getItem('dadosEmpresa'));
+        if (dadosSalvos) {
+            document.getElementById('nomeEmpresa').value = dadosSalvos.nome || '';
+            document.getElementById('cnpjEmpresa').value = dadosSalvos.cnpj || '';
+            document.getElementById('telefoneEmpresa').value = dadosSalvos.telefone || '';
+            document.getElementById('emailEmpresa').value = dadosSalvos.email || '';
+            document.getElementById('enderecoEmpresa').value = dadosSalvos.endereco || '';
+        }
+        });
+
+
+    </script>
+
+    <script src="script.js">
+    </script> 
+</body>
+</html>
